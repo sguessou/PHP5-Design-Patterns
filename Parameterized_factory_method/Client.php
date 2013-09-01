@@ -2,6 +2,7 @@
 
 //Client.php
 include_once('CountryFactory.php');
+//include_once('CodeIgniterProduct.php');
 include_once('LaravelProduct.php');
 
 class Client
@@ -12,6 +13,7 @@ class Client
 	{
 		$this->countryFactory = new CountryFactory();
 		
+		//echo $this->countryFactory->startFactory(new CodeIgniterProduct());
 		echo $this->countryFactory->startFactory(new LaravelProduct());	
 	}
 }
