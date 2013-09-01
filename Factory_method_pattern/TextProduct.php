@@ -10,7 +10,7 @@ class TextProduct implements Product
 	public function getProperties()
 	{
 		//Begin heredoc formating
-		$this->mfgProduct =  $msg = <<<EOD
+		$this->mfgProduct = <<<EOD
 				<html>
 				<body>
 				<h2>Thank you for registering!</h2>
