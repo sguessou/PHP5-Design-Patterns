@@ -1,0 +1,21 @@
+{
+	"name":		"sguessou/PHP5DesignPatterns",
+	"description":	"Various coding practices I'm working on.",
+	
+	"authors": [
+	{
+		"name":		"Guessous Saad",
+		"email":	"guessou_saad@hotmail.com",
+		"homepage":	"http://rascal.mooo.com/project"
+	} 
+     ],
+ 	"require": {
+			             
+	 },
+
+	"autoload": {
+			"classmap": [
+			        "prototype"
+			]
+	}			
+}
