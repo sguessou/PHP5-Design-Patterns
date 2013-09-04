@@ -1,13 +1,12 @@
 <?php
-//IProductPrototype.php
 
-
-abstract class IProductPrototype
+//IPrototype.php
+abstract class IPrototype
 {
 
 	protected $name;
 	protected $description;
-	protected $type
+	protected $type;
 	
 	abstract function setType();
 	abstract function getType(); 	
@@ -25,7 +24,7 @@ abstract class IProductPrototype
 	}
 
 	//Description
-	public function setdescription($description)
+	public function setDescription($description)
 	{
 		$this->description = $description;
 	}
@@ -37,4 +36,5 @@ abstract class IProductPrototype
 
 	abstract function __clone();
 }
+
 ?>

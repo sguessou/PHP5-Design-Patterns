@@ -1,8 +1,9 @@
 <?php
 
-include_once('IProductProtype.php'); 
+include_once('IPrototype.php');
 
-Class Movies extends IProductPrototype
+
+Class Movie extends IPrototype
 {
 	public function setType()
 	{
@@ -14,5 +15,7 @@ Class Movies extends IProductPrototype
 		return $this->type;
 	}
 
-	public function __clone() {}
+	function __clone(){}
 } 
+
+?>
