@@ -5,9 +5,9 @@ include_once('IPrototype.php');
 
 Class Ebook extends IPrototype
 {
-	public function setType()
+	public function setType($type)
 	{
-		$this->type = 'Ebook';
+		$this->type = $type;
 	}
 
 	public function getType()

@@ -7,8 +7,9 @@ abstract class IPrototype
 	protected $name;
 	protected $description;
 	protected $type;
+	protected $id;
 	
-	abstract function setType();
+	abstract function setType($type);
 	abstract function getType(); 	
 
 	
@@ -32,6 +33,17 @@ abstract class IPrototype
 	public function getDescription()
 	{
 		return $this->description;
+	}
+
+	//Id
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+
+	public function getId()
+	{
+		return $this->id;
 	}
 
 	abstract function __clone();

@@ -5,9 +5,9 @@ include_once('IPrototype.php');
 
 Class Movie extends IPrototype
 {
-	public function setType()
+	public function setType($type)
 	{
-		$this->type = 'Movie';
+		$this->type = $type;
 	}
 
 	public function getType()
