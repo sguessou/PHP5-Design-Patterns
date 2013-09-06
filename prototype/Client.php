@@ -54,15 +54,19 @@ Class Client
 		for ($i = 0; $i < $this->lenght; $i++)
 			$movies_data[] = $this->redis->hgetall("movies:$movies_id[$i]");
 
+		//return var_dump($movies_data);
+
 		//We clone concrete class and insert data
+		
 		for ($i = 0; $i < $this->lenght; $i++)
 		{
 			$this->movieClones[$i] = clone $this->movie;
 			$this->movieClones[$i]->setName( $movies_data[$i]['name'] );
+			$this->movieClones[$i]->setId( $movies_data[$i]['id'] );
 			$this->movieClones[$i]->setDescription( $movies_data[$i]['description'] );
 		}	
 
-		//var_dump($movieClones);
+		//return var_dump($this->movieClones); 
 	}
 
 	
@@ -76,7 +80,31 @@ Class Client
 
 		for ($i = 0; $i < $this->lenght; $i++)
 		{
-			$this->layout .= '<a href="#">' . $this->movieClones[$i]->getName() . '</a><br />';
+			$this->layout .= '<a data-toggle="modal" href="#myModal_'.$this->movieClones[$i]->getId().'" class="btn btn-link">'.$this->movieClones[$i]->getName().'</a><br />';
+
+			$this->layout .= '
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal_'.$this->movieClones[$i]->getId().'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			    <div class="modal-dialog">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			          <h4 class="modal-title">'.$this->movieClones[$i]->getName().'</h4>
+			        </div>
+			        <div class="modal-body">
+			        <h4>DVD Description</h4><br />
+            		<div class="twist_img">
+          			<img src="../images/'.$this->movieClones[$i]->getId().'.jpg">
+			         <p>'.$this->movieClones[$i]->getDescription().'</p>
+			         </div>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			         </div>
+			      </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			  </div><!-- /.modal -->';
+ 				
 		}
 
 		$this->layout .= '</div>';

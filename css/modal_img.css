@@ -1,0 +1,13 @@
+.twist_img img {
+  float:right;
+  width: 160px;
+  margin: 0 0 1em 1em;
+  -webkit-box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.4);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);  
+  -o-transform: rotate(5deg);  
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
