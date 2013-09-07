@@ -24,9 +24,13 @@ class Client
 		$display_1 = new CurrentConditionsDisplay($this->weatherData);
 		$display_2 = new ForecastDisplay($this->weatherData);
 		$display_3 = new StatisticsDisplay($this->weatherData);
+		$display_4 = new HeatIndexDisplay($this->weatherData);
 	}
 
 }
 
 $client = new Client();
+
 $client->weatherData->setMeasurements(80, 64, 30.4);
+$client->weatherData->setMeasurements(82, 70, 29.2);
+$client->weatherData->setMeasurements(78, 90, 29.2);

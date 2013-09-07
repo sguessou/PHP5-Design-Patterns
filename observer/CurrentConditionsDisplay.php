@@ -45,7 +45,7 @@ class CurrentConditionsDisplay extends Display implements IObserver
 
 	public function display()
 	{
-		echo 'Current conditions: ' . $this->getTemperature() . 'C degrees and ' . $this->getHumidity() . ' % humidity';
+		echo '<br />Current conditions: ' . $this->getTemperature() . 'F degrees and ' . $this->getHumidity() . ' % humidity';
 		//echo '<br /> id: ' . $this->id;
 	}
 }
