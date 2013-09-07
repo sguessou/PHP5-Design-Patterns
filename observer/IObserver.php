@@ -2,7 +2,7 @@
 
 interface IObserver
 {
-	public update();	
+	public function update();	
 }
 
 ?>

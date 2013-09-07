@@ -1,5 +1,9 @@
 <?php
 
+include_once('ISubject.php');
+include_once('IObserver.php');
+
+
 class WeatherData implements ISubject
 {
 	private $observers;
@@ -12,27 +16,48 @@ class WeatherData implements ISubject
 		$this->observers = array();
 	}
 
-	public registerObserver(IObserver $obs)
+	public function registerObserver(IObserver $obs)
 	{
 		$this->observers[] = $obs;
+		//var_dump($this->observers);
 	}
 
-	public removeObserver(IObserver $obs)
+	public function removeObserver(IObserver $obs)
 	{
-
+		return;
 	}
 
-	public getTemperature()
+	public function notifyObserver()
+	{
+		for ($i = 0; $i < sizeof($this->observers); $i++)
+			$this->observers[$i]->update();	
+	}
+
+	public function measurementsChanged()
+	{
+		$this->notifyObserver();
+	}
+
+	public function setMeasurements($temperature, $humidity, $pressure)
+	{
+		$this->temperature = (float) $temperature;
+		$this->humidity = (float) $humidity;
+		$this->pressure = (float) $pressure;
+
+		$this->measurementsChanged();
+	}
+
+	public function getTemperature()
 	{
 		return $this->temperature;
 	}
 
-	public getHumidity()
+	public function getHumidity()
 	{
 		return $this->humidity;
 	}
 
-	public getPressure()
+	public function getPressure()
 	{
 		return $this->pressure;
 	}
