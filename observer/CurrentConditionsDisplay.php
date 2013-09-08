@@ -1,29 +1,24 @@
 <?php
 
-include_once('Display.php');
-include_once('IObserver.php');
+include_once('IDisplay.php');
+include_once('Observer.php');
 include_once('WeatherData.php');
 
-class CurrentConditionsDisplay extends Display implements IObserver
+class CurrentConditionsDisplay extends Observer implements IDisplay
 {
 	private $temperature;
 	private $humidity;
-	private $id; 
 	private $weatherData;
 
 	public function __construct(ISubject $weatherData)
 	{
 		srand((double)microtime() * 1000000);
 		$this->id = md5('observer' . time() . rand(1, 1000000));
-   
+
 		$weatherData->registerObserver($this);
 		$this->weatherData = $weatherData;
 	}
 
-	public function getId()
-	{
-		return $this->id;
-	}
 
 	public function getTemperature()
 	{

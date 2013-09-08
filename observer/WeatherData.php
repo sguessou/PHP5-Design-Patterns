@@ -1,7 +1,7 @@
 <?php
 
 include_once('ISubject.php');
-include_once('IObserver.php');
+//include_once('Observer.php');
 
 
 class WeatherData implements ISubject
@@ -16,13 +16,13 @@ class WeatherData implements ISubject
 		$this->observers = array();
 	}
 
-	public function registerObserver(IObserver $obs)
+	public function registerObserver(Observer $obs)
 	{
 		$this->observers[] = $obs;
 		//var_dump($this->observers);
 	}
 
-	public function removeObserver(IObserver $obs)
+	public function removeObserver(Observer $obs)
 	{
 		return;
 	}

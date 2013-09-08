@@ -1,10 +1,10 @@
 <?php
 
-include_once('Display.php');
-include_once('IObserver.php');
+include_once('IDisplay.php');
+include_once('Observer.php');
 include_once('WeatherData.php');
 
-class StatisticsDisplay extends Display implements IObserver
+class StatisticsDisplay extends Observer implements IDisplay
 {
 	private $maxTemp = 0.0;
 	private $minTemp = 200;
@@ -16,14 +16,9 @@ class StatisticsDisplay extends Display implements IObserver
 	{
 		srand((double)microtime() * 1000000);
 		$this->id = md5('observer' . time() . rand(1, 1000000));
-   
+
 		$weatherData->registerObserver($this);
 		$this->weatherData = $weatherData;
-	}
-
-	public function getId()
-	{
-		return $this->id;
 	}
 
 	public function getTemperature()

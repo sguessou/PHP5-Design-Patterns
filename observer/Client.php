@@ -9,11 +9,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 
-
-//include_once('WeatherData.php');
-//include_once('CurrentConditionsDisplay.php');
-//include_once('ForecastDisplay.php');
-
 class Client
 {
 	public $weatherData;
