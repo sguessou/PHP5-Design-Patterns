@@ -6,4 +6,7 @@ Design Principles:
 
 3) Favor composition over inheritence. (HAS-A can be better than IS-A).
 
+4) Class should be open for extension, but closed for modification.
+
+
 
