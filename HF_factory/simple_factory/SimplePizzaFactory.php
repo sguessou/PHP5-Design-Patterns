@@ -1,6 +1,6 @@
 <?php
 
-includ_once('Pizza.php');
+include_once('Pizza.php');
 
 class SimplePizzaFactory
 {
