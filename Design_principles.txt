@@ -8,5 +8,7 @@ Design Principles:
 
 4) Class should be open for extension, but closed for modification.
 
+5) Depend upon abstarctions. Do not depend upon concrete classes.
 
+ 	
 
